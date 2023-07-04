@@ -1,7 +1,15 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "this is my test"
+  show-properties:
+    - name: Show github properties
+      run: |
+        echo ${{ github.workflow }}
+        echo ${{ github.ref }}
+        echo ${{ github.sha }}
+    - name: Show secret properties
+      run: |
+        echo ${{ secrets.SAMPLE }}
+    - name: Show inputs properties
+      run: |
+        echo ${{ github.event.inputs.comment }}
