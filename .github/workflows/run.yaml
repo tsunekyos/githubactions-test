@@ -8,6 +8,7 @@ on:
         default: "手動"
 jobs:
   show-properties:
+    runs-on: ubuntu-latest
     - name: Show github properties
       run: |
         echo ${{ github.workflow }}
