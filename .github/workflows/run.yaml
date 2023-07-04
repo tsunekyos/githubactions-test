@@ -1,5 +1,11 @@
 name: learn-github-actions
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      comment:
+        description: "my comment"
+        required: false
+        default: "手動"
 jobs:
   show-properties:
     - name: Show github properties
